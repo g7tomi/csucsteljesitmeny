@@ -1,0 +1,169 @@
+@import "bootstrap";
+@import "bootstrap/theme";
+
+
+ .navbar-default {
+    background-image: none;
+	 background-repeat:no-repeat;
+	 border-radius:0px;
+	 box-shadow: none;
+	 background-color: fff;
+	 border-width: 0px;
+	 
+ }
+
+.animate-show {
+	 -webkit-animation: myappear 1s infinite; /* Chrome, Safari, Opera */
+    animation: myappear 1s infinite;
+	animation-iteration-count: 1;
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes myappear {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes myappear {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+
+.navbar-default {
+	 z-index: 1;
+}
+body{
+	overflow-x: hidden;
+}
+
+
+.btn-file {
+    position: relative;
+    overflow: hidden;
+}
+.btn-file input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 100px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    background: white;
+    cursor: inherit;
+    display: block;
+}
+
+.descbutton{
+	font-size: 30px;
+	color: gray;
+	cursor: pointer;
+}
+
+.wholepage{
+	width:100%;
+	height:100vh;
+}
+
+$position: relative;
+ 
+$image-size-width:    15%;
+$image-size-height:    40vw;
+@media(min-width: $screen-lg) {
+$image-size-height:    35vw;
+}
+
+.circleimage{
+	width:40px;
+	height:40px;
+}
+
+.imagecontainer {
+	margin-bottom: 20px;
+	padding: 0px;
+	height: auto;
+//	min-height: $image-size-height;
+	position: $position;
+	cursor: pointer;
+
+	.image{
+	 @media(min-width: $screen-lg) {
+		 //átírni a cssben 1 ről 0 ra 
+		z-index: 0;
+	 }
+		margin:0px;
+		width:  100%;	
+	 @media(min-width: $screen-lg) {
+		width:  100%-(2*$image-size-width);
+ 	}
+	// min-height: $image-size-height;
+
+	img{
+		width: 100%;
+		height: 100%;
+		pointer-events: none;
+		
+	}
+	}
+	.leftarrow{
+		z-index: 2;
+		position: absolute;
+				@media(min-width: $screen-lg) {
+			position: relative;
+		}
+		width:  $image-size-width;
+		height: $image-size-height;
+		float:left;
+		  top: 0;
+  		left: 0;
+		margin-top:0px;
+	
+		img{
+			width: 100%;
+			height: 100%;
+		}
+	}
+	.leftarrow:hover{
+		background-color: lightgray;
+		opacity: 0.1;
+		img{
+			width: 100%;
+			height: 100%;
+			opacity: 1;
+			 fill:black;
+		}
+	}
+	.rightarrow{
+		z-index: 2;
+		position: absolute;
+		@media(min-width: $screen-lg) {
+			position: relative;
+		}
+		top: 0;
+  		right: 0;
+		width:  $image-size-width;
+		height: $image-size-height;
+		margin:0px;
+		float:right;
+		img{
+			width: 100%;
+			height: 100%;
+			
+		}
+	}
+	.rightarrow:hover{
+		background-color: lightgray;
+		opacity: 0.1;
+		img{
+			width: 100%;
+			height: 100%;
+			opacity: 1;
+			 fill:red;
+		}
+	}
+}
+
